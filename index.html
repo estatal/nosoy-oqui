@@ -1,26 +1,293 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>#NoSoyÑoqui</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="http://estatal.github.io/trabajo/stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="http://estatal.github.io/trabajo/stylesheets/stylesheet.css" media="screen">
+
     <link rel="stylesheet" type="text/css" href="http://estatal.github.io/trabajo/stylesheets/github-light.css" media="screen">
-<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 
-</head>
+<style>
 
+* {
+  box-sizing: border-box; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #606c71; }
+
+a {
+  color: #1e6bb8;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+.btn {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.3rem;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s; }
+  .btn + .btn {
+    margin-left: 1rem; }
+
+.btn:hover {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3); }
+
+@media screen and (min-width: 64em) {
+  .btn {
+    padding: 0.75rem 1rem; } }
+
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .btn {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem; } }
+
+@media screen and (max-width: 42em) {
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.9rem; }
+    .btn + .btn {
+      margin-top: 1rem;
+      margin-left: 0; } }
+
+.page-header {
+  color: #fff;
+  text-align: center;
+  background-color: #159957;
+  background-image: linear-gradient(120deg, #155799, #159957); }
+
+@media screen and (min-width: 64em) {
+  .page-header {
+    padding: 5rem 6rem; } }
+
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .page-header {
+    padding: 3rem 4rem; } }
+
+@media screen and (max-width: 42em) {
+  .page-header {
+    padding: 2rem 1rem; } }
+
+.project-name {
+  margin-top: 0;
+  margin-bottom: 0.1rem; }
+
+@media screen and (min-width: 64em) {
+  .project-name {
+    font-size: 3.25rem; } }
+
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .project-name {
+    font-size: 2.25rem; } }
+
+@media screen and (max-width: 42em) {
+  .project-name {
+    font-size: 1.75rem; } }
+
+.project-tagline {
+  margin-bottom: 2rem;
+  font-weight: normal;
+  opacity: 0.7; }
+
+@media screen and (min-width: 64em) {
+  .project-tagline {
+    font-size: 1.25rem; } }
+
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .project-tagline {
+    font-size: 1.15rem; } }
+
+@media screen and (max-width: 42em) {
+  .project-tagline {
+    font-size: 1rem; } }
+
+.main-content :first-child {
+  margin-top: 0; }
+.main-content img {
+  max-width: 100%; }
+.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+  color: #159957; }
+.main-content p {
+  margin-bottom: 1em; }
+.main-content code {
+  padding: 2px 4px;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 0.9rem;
+  color: #383e41;
+  background-color: #f3f6fa;
+  border-radius: 0.3rem; }
+.main-content pre {
+  padding: 0.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  color: #567482;
+  word-wrap: normal;
+  background-color: #f3f6fa;
+  border: solid 1px #dce6f0;
+  border-radius: 0.3rem; }
+  .main-content pre > code {
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #567482;
+    word-break: normal;
+    white-space: pre;
+    background: transparent;
+    border: 0; }
+.main-content .highlight {
+  margin-bottom: 1rem; }
+  .main-content .highlight pre {
+    margin-bottom: 0;
+    word-break: normal; }
+.main-content .highlight pre, .main-content pre {
+  padding: 0.8rem;
+  overflow: auto;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  border-radius: 0.3rem; }
+.main-content pre code, .main-content pre tt {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0; }
+  .main-content pre code:before, .main-content pre code:after, .main-content pre tt:before, .main-content pre tt:after {
+    content: normal; }
+.main-content ul, .main-content ol {
+  margin-top: 0; }
+.main-content blockquote {
+  padding: 0 1rem;
+  margin-left: 0;
+  color: #819198;
+  border-left: 0.3rem solid #dce6f0; }
+  .main-content blockquote > :first-child {
+    margin-top: 0; }
+  .main-content blockquote > :last-child {
+    margin-bottom: 0; }
+.main-content table {
+
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all; }
+  .main-content table th {
+    font-weight: bold; }
+  .main-content table th, .main-content table td {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e9ebec; }
+.main-content dl {
+  padding: 0; }
+  .main-content dl dt {
+    padding: 0;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: bold; }
+  .main-content dl dd {
+    padding: 0;
+    margin-bottom: 1rem; }
+.main-content hr {
+  height: 2px;
+  padding: 0;
+  margin: 1rem 0;
+  background-color: #eff0f1;
+  border: 0; }
+
+@media screen and (min-width: 64em) {
+  .main-content {
+    max-width: 64rem;
+    padding: 2rem 6rem;
+    margin: 0 auto;
+    font-size: 1.1rem; } }
+
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .main-content {
+    padding: 2rem 4rem;
+    font-size: 1.1rem; } }
+
+@media screen and (max-width: 42em) {
+  .main-content {
+    padding: 2rem 1rem;
+    font-size: 1rem; } }
+
+.site-footer {
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: solid 1px #eff0f1; }
+
+.site-footer-owner {
+  display: block;
+  font-weight: bold; }
+
+.site-footer-credits {
+  color: #819198; }
+
+@media screen and (min-width: 64em) {
+  .site-footer {
+    font-size: 1rem; } }
+
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .site-footer {
+    font-size: 1rem; } }
+
+@media screen and (max-width: 42em) {
+  .site-footer {
+    font-size: 0.9rem; } }
+	
+	
+.table {
+
+   text-align: center;   
+	align:center;
+padding:50px;
+    width: 100%;
+    height: 100%;
+}
+
+.table td {
+   text-align: center !important;
+}
+</style
+	</head>
   <body>
-  	
     <section class="page-header">
       <h1 class="project-name">#NoSoyÑoqui</h1>
       <h2 class="project-tagline">Soy un trabajador.</h2>
       
+      
+	  
+      
+
+
+
       <a href="#jump-poll" class="btn">A mi también me echaron.</a>
-      <a href="#jump-ver" class="btn">Estadística de despidos.</a>
+      <a href="#jump-ver" class="btn">Lista de despedidos.</a>
       <a href="#jump-tweets" class="btn">Tweets #NoSoyÑoqui</a>
+	  
+
 
     </section>
 
@@ -28,7 +295,7 @@
 	
 
 	
-<div id="jump-poll">
+<div id="jump-poll" style="margin:0px;">
 <center>
 	<h3>
 	<a class="anchor"  aria-hidden="true"><span class="octicon octicon-link"></span></a>
@@ -36,23 +303,124 @@
 
 	
 	<div>
-		<iframe src="http://www.poll-maker.com/QKXPWP" style=" border-width:0 " width="310" height="400" frameborder="0" scrolling="no">
+		<iframe src="http://www.poll-maker.com/QKXPWP" style=" border-width:0 " width="300" height="410" frameborder="0" scrolling="no">
 		</iframe>
 	</div>
 </center>
 </div>
 
 
+
+
+
 <div id="jump-ver">
 <center>
 	<h3>
 	<a class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>
-	Estadística de gente despedida:</h3>
+	Despedidos por área (enviar info usando #NoSoyÑoqui):</h3>
 
+	
+
+	<table class="table" >
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Organismo</th>
+            <th>Despidos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>AFSCA</td>
+            <td>480</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>CCK</td>
+            <td>600</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Plan Fines</td>
+            <td>700</td>
+          </tr>
+		  
+          <tr>
+            <td>4</td>
+            <td>Jefatura de Gabinete</td>
+            <td>150</td>
+          </tr>
+
+			<tr>
+            <td>5</td>
+            <td>Ministerio de Educación</td>
+            <td>2000</td>
+          </tr>
+		  
+			<tr>
+            <td>6</td>
+            <td>Ministerio de Salud</td>
+            <td>380</td>
+          </tr>
+		  
+			<tr>
+            <td>7</td>
+            <td>Municipalidad de Campana</td>
+            <td>220</td>
+          </tr>		
+		  			<tr>
+            <td>8</td>
+            <td>Municipalidad de La Plata</td>
+            <td>4500</td>
+          </tr>		
+		  
+
+		  			<tr>
+            <td>9</td>
+            <td>Municipalidad de Quilmes</td>
+            <td>950</td>
+          </tr>	
+		  
+			<tr>
+            <td>10</td>
+            <td>Municipalidad de Unquillo</td>
+            <td>100</td>
+          </tr>		
+		  
+			<tr>
+            <td>11</td>
+            <td>Senado de la Nación</td>
+            <td>2025</td>
+          </tr>		
+
+			<tr>
+            <td>12</td>
+            <td>Vialidad Nacional</td>
+            <td>330</td>
+          </tr>		
+		  
+<tr>
+            <td></td>
+            <td><B>Total</B></td>
+            <td>12.435</td>
+          </tr>		
+		  
+		  
+        </tbody>
+      </table>
+
+	  
+	  
 	<div>
-		<iframe src="http://www.poll-maker.com/resultsQKXPWP" style=" border-width:0 " width="310" height="700" frameborder="0" scrolling="no">
+	<br>
+<h3>
+	<a class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+	Estadística de gente despedida:</h3>
+		<iframe src="http://www.poll-maker.com/resultsQKXPWP" style=" border-width:0 " width="300" height="700" frameborder="0" scrolling="no">
 		</iframe>
 	</div>	
+	
 </center>
 </div>
 
@@ -70,12 +438,35 @@
 </div>
 
 
+
+
+
+
+
+
+
+
     </section>
 
+  <!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=10770549; 
+var sc_invisible=0; 
+var sc_security="657d6bc2"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript>
+
+<div class="statcounter"><img
+class="statcounter"
+src="http://c.statcounter.com/10770549/0/657d6bc2/0/"
+></div>
+
+</noscript>
+<!-- End of StatCounter Code for Default Guide -->
   </body>
-  <script>
-  	$(".ad-resp").hide();
-  	$(".quiz-ads").hide();
-  	$(".quiz-ads-bottom").hide();
-  </script>
 </html>
